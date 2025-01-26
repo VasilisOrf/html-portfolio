@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website | Vasilis Orfanos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">V. Orfanos</a>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Reviews.html">Reviews</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-image">
+            <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
+        </div>
+        <div class="home-content">
+            <h1>Hi, I'm Vasilis Orfanos</h1>
+            <h3>HR Consultant | Career Coach</h3>
+            <p>Welcome, I'm thrilled you're here! In this portfolio, you'll explore a curated collection of projects and services that showcase my expertise and the tangible impact I've made in the careers of over 300 professionals across Europe.</p>
+            <hr>
+            <br>
+            <h2>Contact me</h2>
+            <p>Telephone : +30 695 53 11 320</p>
+            <p>e-mail : orfanos_vasilis@yahoo.gr</p>
+
+            <div class="home-sci">
+                <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <a href="docs/Vasileios_Orfanos_Resume.pdf" class="btn" id="downloadCvButton" download="Vasileios_Orfanos_Resume.pdf">Download CV</a>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2025 Vasilis Orfanos. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // List of button IDs and the associated alert messages
+            const buttonsInfo = [
+                { id: 'indexButton', message: 'You clicked the Index button!' },
+                { id: 'aboutButton', message: 'You clicked the About button!' },
+                { id: 'servicesButton', message: 'You clicked the Services button!' },
+                { id: 'portfolioButton', message: 'You clicked the Portfolio button!' },
+                { id: 'contactButton', message: 'You clicked the Contact button!' }
+            ];
+
+            // Function to add an event listener to a button
+            function addButtonListener(buttonId, alertMessage) {
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    button.addEventListener('click', () => {
+                        alert(alertMessage);
+                    });
+                }
+            }
+
+            // Apply event listeners to each button
+            buttonsInfo.forEach(button => addButtonListener(button.id, button.message));
+        });
+    </script>
+</body>
+</html>

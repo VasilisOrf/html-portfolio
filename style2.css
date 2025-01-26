@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f4f4; /* Light gray background */
+    color: #ffffff; /* White text for high contrast */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #031540; /* Dark blue header background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensures header stays on top */
+}
+
+.logo {
+    font-size: 25px;
+    color: #ffffff; /* White for the logo text */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Navigation Link Styling */
+.navbar a {
+    font-size: 18px;
+    color: #fff; /* White text for navigation links */
+    text-decoration: none;
+    margin-left: 35px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #eaff00; /* Yellow for hover and active states */
+}
+
+/* Main Content Area */
+.main-content {
+    padding: 140px 10% 20px; /* Increased top padding to account for header */
+    min-height: calc(100vh - 40px); /* Adjust height based on header */
+    background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.main-content h1 {
+    font-size: 40px;
+    color: #ffffff; /* White text for headings */
+    margin-bottom: 20px;
+}
+
+.main-content p, .main-content a {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff; /* White text for readable contrast */
+}
+
+.main-content a {
+    text-decoration: underline;
+}
+
+.main-content a:hover {
+    color: #00abf0; /* Light blue for link hover effects */
+}
+
+/* Button Styling */
+.btn {
+    padding: 12px 35px;
+    background: #00abf0; /* Consistent button color with navigation hover */
+    border-radius: 40px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #00abf0;
+    transition: all .5s;
+}
+
+.btn:hover {
+    background: #fff; /* White background on hover */
+    color: #00abf0; /* Blue text on hover */
+    box-shadow: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%; /* Slightly reduced padding for small screens */
+    }
+
+    .main-content {
+        padding-top: 100px; /* Further increased top padding on small screens */
+    }
+
+    .navbar a {
+        margin-left: 20px; /* Less space between nav links on smaller screens */
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #134e92; /* Dark blue background */
+    color: #fff; /* White text */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
