@@ -6,10 +6,103 @@
     <title>Reviews | Vasilis Orfanos</title>
     <link rel="stylesheet" href="style2.css">
     <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4; /* Light gray background */
+            color: #ffffff; /* White text for high contrast */
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
+
+        /* Header Styling */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #031540; /* Dark blue header background */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Ensures header stays on top */
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ffffff; /* White for the logo text */
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Navigation Link Styling */
+        .navbar a {
+            font-size: 18px;
+            color: #fff; /* White text for navigation links */
+            text-decoration: none;
+            margin-left: 35px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #eaff00; /* Yellow for hover and active states */
+        }
+
+        /* Main Content Area */
+        .main-content {
+            padding: 140px 10% 20px; /* Increased top padding to account for header */
+            min-height: calc(100vh - 40px); /* Adjust height based on header */
+            background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .main-content h1 {
+            font-size: 40px;
+            color: #ffffff; /* White text for headings */
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            text-align: justify;
+            text-justify: inter-word;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff; /* White text for readable contrast */
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #134e92; /* Dark blue background */
+            color: #fff; /* White text */
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
         /* Mobile-friendly adjustments */
         @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%; /* Slightly reduced padding for small screens */
+            }
+
             .main-content {
-                padding: 10px; /* Reduce padding for smaller screens */
+                padding: 100px 5% 20px; /* Adjusted padding for mobile */
             }
 
             .main-content h1 {
@@ -28,11 +121,7 @@
 
             .navbar a {
                 font-size: 0.9em; /* Slightly smaller nav links */
-                padding: 5px; /* Adjust padding for tighter spacing */
-            }
-
-            .header {
-                padding: 10px; /* Reduce header padding */
+                margin-left: 20px; /* Less space between nav links */
             }
 
             .logo {
