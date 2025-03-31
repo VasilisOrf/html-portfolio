@@ -6,6 +6,177 @@
     <title>About | Vasilis Orfanos</title>
     <link rel="stylesheet" href="style2.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4; /* Light gray background */
+            color: #ffffff; /* White text for high contrast */
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
+
+        /* Header Styling */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #031540; /* Dark blue header background */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Ensures header stays on top */
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ffffff; /* White for the logo text */
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Navigation Link Styling */
+        .navbar a {
+            font-size: 18px;
+            color: #fff; /* White text for navigation links */
+            text-decoration: none;
+            margin-left: 35px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #eaff00; /* Yellow for hover and active states */
+        }
+
+        /* Main Content Area */
+        .main-content {
+            padding: 140px 10% 20px; /* Increased top padding to account for header */
+            min-height: calc(100vh - 40px); /* Adjust height based on header */
+            background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .main-content h1 {
+            font-size: 40px;
+            color: #ffffff; /* White text for headings */
+            margin-bottom: 20px;
+        }
+
+        .main-content h2 {
+            font-size: 28px;
+            color: #ffffff; /* White text for subheadings */
+            margin-bottom: 15px;
+        }
+
+        .main-content p.justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff; /* White text for readable contrast */
+        }
+
+        .main-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+            padding-right: 20px;
+            color: #ffffff; /* White text for list items */
+        }
+
+        .main-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .main-content ul li a {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #007BFF; /* Blue button background */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            max-width: 100%;
+            word-wrap: break-word;
+            transition: background-color 0.3s;
+        }
+
+        .main-content ul li a:hover {
+            background-color: #00abf0; /* Lighter blue on hover */
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #134e92; /* Dark blue background */
+            color: #fff; /* White text */
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%; /* Slightly reduced padding for small screens */
+            }
+
+            .main-content {
+                padding: 100px 5% 20px; /* Adjusted padding for mobile */
+            }
+
+            .main-content h1 {
+                font-size: 1.5em; /* Slightly smaller heading */
+            }
+
+            .main-content h2 {
+                font-size: 1.2em; /* Slightly smaller subheading */
+            }
+
+            .main-content p.justified-text {
+                font-size: 0.9em; /* Adjust paragraph text size */
+            }
+
+            .main-content ul {
+                padding-left: 15px; /* Slightly less padding on mobile */
+                padding-right: 15px;
+            }
+
+            .main-content ul li a {
+                font-size: 0.9em; /* Smaller button text */
+                padding: 8px; /* Reduced padding for buttons */
+            }
+
+            .navbar a {
+                font-size: 0.9em; /* Slightly smaller nav links */
+                margin-left: 20px; /* Less space between nav links */
+            }
+
+            .logo {
+                font-size: 1.2em; /* Slightly smaller logo text */
+            }
+
+            .footer p {
+                font-size: 0.9em; /* Smaller footer text */
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -31,22 +202,18 @@
         <br>
         <h2>Licenses & Certifications</h2>
         <ul style="list-style-type: disc; padding-left: 20px; text-align: left; padding-right: 20px;">
-        <li><strong>Certified HR Professional:</strong> 
-        <a href="https://www.credly.com/badges/0c080ff3-7d6b-4161-b00d-e8684b3cddb6" target="_blank" 
-        style="display: inline-block; padding: 10px; margin: 5px 0; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; max-width: 100%; word-wrap: break-word;">View Badge</a>
-        </li>
-        <li><strong>IT Recruiting Certification:</strong> 
-        <a href="https://www.credly.com/badges/4e5d9b4f-31e3-4a48-a6e6-b436578b6412" target="_blank" 
-        style="display: inline-block; padding: 10px; margin: 5px 0; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; max-width: 100%; word-wrap: break-word;">View Badge</a>
-        </li>
-        <li><strong>Talent Acquisition:</strong> 
-        <a href="https://www.linkedin.com/in/vasilis-orfanos/details/certifications/1722594936391/single-media-viewer/?type=DOCUMENT&profileId=ACoAABgAyLkBngJzmoI1p0Eil4foogJV-Y8O_3E" target="_blank" 
-        style="display: inline-block; padding: 10px; margin: 5px 0; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; max-width: 100%; word-wrap: break-word;">View Certification</a>
-        </li>
-        <li><strong>Human Resources Recruiter:</strong> 
-        <a href="https://www.linkedin.com/in/vasilis-orfanos/details/certifications/1722595819251/single-media-viewer/?type=DOCUMENT&profileId=ACoAABgAyLkBngJzmoI1p0Eil4foogJV-Y8O_3E" target="_blank" 
-        style="display: inline-block; padding: 10px; margin: 5px 0; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; max-width: 100%; word-wrap: break-word;">View Certification</a>
-        </li>
+            <li><strong>Certified HR Professional:</strong> 
+                <a href="https://www.credly.com/badges/0c080ff3-7d6b-4161-b00d-e8684b3cddb6" target="_blank">View Badge</a>
+            </li>
+            <li><strong>IT Recruiting Certification:</strong> 
+                <a href="https://www.credly.com/badges/4e5d9b4f-31e3-4a48-a6e6-b436578b6412" target="_blank">View Badge</a>
+            </li>
+            <li><strong>Talent Acquisition:</strong> 
+                <a href="https://www.linkedin.com/in/vasilis-orfanos/details/certifications/1722594936391/single-media-viewer/?type=DOCUMENT&profileId=ACoAABgAyLkBngJzmoI1p0Eil4foogJV-Y8O_3E" target="_blank">View Certification</a>
+            </li>
+            <li><strong>Human Resources Recruiter:</strong> 
+                <a href="https://www.linkedin.com/in/vasilis-orfanos/details/certifications/1722595819251/single-media-viewer/?type=DOCUMENT&profileId=ACoAABgAyLkBngJzmoI1p0Eil4foogJV-Y8O_3E" target="_blank">View Certification</a>
+            </li>
         </ul>
         <br>
         <h2>My Mission</h2>
@@ -54,17 +221,13 @@
         <br>
         <h2>Why Work With Me?</h2>
         <p class="justified-text">My approach combines industry knowledge, genuine care for your goals, and a commitment to delivering measurable results. When you succeed, I succeed—and that drives everything I do. Whether you are a job seeker looking for career guidance or a company seeking top-tier talent and HR consulting, I am here to help!</p>
-     
         <br>
         <br>
         <br>
-
-        </div>
-        
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 Vasilis Orfanos. All rights reserved.</p>
+        <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
     </footer>
 </body>
 </html>
