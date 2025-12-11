@@ -2,67 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website | Vasilis Orfanos</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Boxicons -->
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
-
     <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        body {
-            background: #f4f4f4;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #f4f4f4; color: #ffffff; overflow-x: hidden; }
 
-        /* HEADER */
         .header {
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            padding: 20px 10%;
             background: #031540;
-            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            text-decoration: none;
-            color: #fff;
-        }
+        .logo { font-size: 26px; font-weight: 700; text-decoration: none; color: #fff; }
+        .navbar { display: flex; gap: 30px; }
+        .navbar a { color: #fff; font-size: 17px; text-decoration: none; transition: .3s; }
+        .navbar a:hover, .navbar a.active { color: #eaff00; }
 
-        .navbar {
-            display: flex;
-            gap: 30px;
-        }
-
-        .navbar a {
-            color: #fff;
-            font-size: 17px;
-            text-decoration: none;
-            transition: .3s;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: #eaff00;
-        }
-
-        /* HOME SECTION */
         .home {
             padding: 160px 8% 40px;
             background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
@@ -74,94 +42,34 @@
             flex-wrap: wrap;
         }
 
-        .home-image img {
-            width: 360px;
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
+        .home-image img { width: 360px; max-width: 100%; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+        .home-content { flex: 1 1 400px; max-width: 600px; }
+        .home-content h1 { font-size: 45px; margin-bottom: 10px; }
+        .home-content h3 { font-size: 26px; margin-bottom: 18px; }
+        .home-content p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
+        .home-content hr { height: 1px; background: #fff; border: none; margin: 25px 0; }
+        .home-sci a { font-size: 28px; color: #fff; transition: .3s; margin-right: 15px; }
+        .home-sci a:hover { color: #00abf0; }
 
-        .home-content {
-            flex: 1 1 400px;
-            max-width: 600px;
-        }
+        .footer { text-align: center; padding: 20px; background-color: #134e92; color: #fff; width: 100%; margin-top: 40px; }
 
-        .home-content h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-
-        .home-content h3 {
-            font-size: 26px;
-            margin-bottom: 18px;
-        }
-
-        .home-content p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .home-content hr {
-            height: 1px;
-            background: #fff;
-            border: none;
-            margin: 25px 0;
-        }
-
-        .home-sci a {
-            font-size: 28px;
-            color: #fff;
-            transition: .3s;
-            margin-right: 15px;
-        }
-
-        .home-sci a:hover {
-            color: #00abf0;
-        }
-
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            padding: 18px;
-            background: #134e92;
-            color: #fff;
-            margin-top: 20px;
-        }
-
-        /* RESPONSIVE — TABLET */
         @media (max-width: 992px) {
-            .home {
-                padding-top: 140px;
-                gap: 40px;
-                text-align: center;
-            }
+            .home { padding-top: 140px; gap: 40px; text-align: center; }
             .home-content h1 { font-size: 38px; }
         }
 
-        /* RESPONSIVE — MOBILE */
         @media (max-width: 768px) {
-            .header {
-                padding: 15px 5%;
-            }
-            .navbar {
-                display: none;
-            }
+            .header { padding: 15px 5%; }
+            .navbar { display: none; }
             .home-content h1 { font-size: 32px; }
             .home-content h3 { font-size: 20px; }
             .home-content p { font-size: 14px; }
         }
 
-        /* LARGE DESKTOP SCREENS */
         @media (min-width: 1440px) {
-            .home {
-                padding: 180px 15% 60px;
-            }
-            .home-image img {
-                width: 420px;
-            }
-            .home-content h1 {
-                font-size: 52px;
-            }
+            .home { padding: 180px 15% 60px; }
+            .home-image img { width: 420px; }
+            .home-content h1 { font-size: 52px; }
         }
     </style>
 </head>
