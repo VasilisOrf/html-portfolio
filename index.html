@@ -1,203 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Website | Vasilis Orfanos</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website | Vasilis Orfanos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Βασικό Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-    background: #f4f4f4;
-    color: #fff;
-    overflow: hidden; /* Αποτρέπει scroll */
-}
+        body {
+            background: #f4f4f4; /* Light gray background */
+            color: #ffffff; /* White text for high contrast */
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
 
-/* Header */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: #031540;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    z-index: 1000;
-}
+        /* Header Styling */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #031540; /* Dark blue header background */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Ensures header stays on top */
+        }
 
-.logo {
-    font-size: 25px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-}
+        .logo {
+            font-size: 25px;
+            color: #ffffff; /* White for the logo text */
+            text-decoration: none;
+            font-weight: 700;
+        }
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 16px;
-    transition: 0.3s;
-}
+        /* Navigation Link Styling */
+        .navbar a {
+            font-size: 18px;
+            color: #fff; /* White text for navigation links */
+            text-decoration: none;
+            margin-left: 35px;
+            transition: color 0.3s;
+        }
 
-.navbar a:hover,
-.navbar a.active {
-    color: #eaff00;
-}
+        .navbar a:hover,
+        .navbar a.active {
+            color: #eaff00; /* Yellow for hover and active states */
+        }
 
-/* Home Section */
-.home {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: calc(100vh - 60px - 50px); /* Αφαιρούμε header + footer */
-    padding: 10px 5%; 
-    background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
-    text-align: center;
-}
+        /* Home Section Styling */
+        .home {
+            padding: 140px 10% 20px; /* Increased top padding to account for header */
+            background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
+            display: flex;
+            align-items: center;
+            min-height: calc(100vh - 40px); /* Adjust height based on header/footer */
+        }
 
-/* Μικρή εικόνα ώστε να χωράει όλο το περιεχόμενο */
-.home-image img {
-    width: auto;
-    max-width: 40%;   /* όχι πολύ πλατιά */
-    max-height: 20vh; /* μικρό ύψος για να χωράει χωρίς scroll */
-    object-fit: contain;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
+        .home-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
 
-.home-content h1 {
-    font-size: 1.8em;
-    margin: 5px 0;
-}
+        .home-content {
+            flex: 1;
+            padding-left: 20px;
+        }
 
-.home-content h3 {
-    font-size: 1.1em;
-    margin: 5px 0;
-}
+        .home-content h1 {
+            font-size: 40px;
+            color: #ffffff; /* White text for headings */
+            margin-bottom: 10px;
+        }
 
-.home-content p {
-    font-size: 0.95em;
-    line-height: 1.4;
-    margin: 5px 0;
-}
+        .home-content h3 {
+            font-size: 24px;
+            color: #ffffff; /* White text */
+            margin-bottom: 15px;
+        }
 
-.home-content hr {
-    width: 50%;
-    margin: 10px auto;
-    border: 0;
-    height: 1px;
-    background: #fff;
-}
+        .home-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff; /* White text for readable contrast */
+            margin-bottom: 20px;
+        }
 
-.home-content h2 {
-    font-size: 1.2em;
-    margin: 5px 0;
-}
+        .home-content hr {
+            border: 0;
+            height: 1px;
+            background: #ffffff;
+            margin: 20px 0;
+        }
 
-.home-sci a {
-    color: #fff;
-    font-size: 20px;
-    margin: 0 5px;
-    transition: 0.3s;
-}
+        .home-content h2 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
 
-.home-sci a:hover {
-    color: #00abf0;
-}
+        .home-sci a {
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-/* Footer */
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: #134e92;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 0.9em;
-}
+        .home-sci a:hover {
+            color: #00abf0; /* Light blue for hover */
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .header {
-        padding: 0 5%;
-    }
-    .logo {
-        font-size: 1.2em;
-    }
-    .navbar a {
-        font-size: 0.9em;
-        margin-left: 15px;
-    }
-    .home-image img {
-        max-width: 60%;
-        max-height: 15vh; /* ακόμα μικρότερη εικόνα για κινητά */
-    }
-    .home-content h1 {
-        font-size: 1.4em;
-    }
-    .home-content h3 {
-        font-size: 1em;
-    }
-    .home-content p {
-        font-size: 0.85em;
-    }
-    .home-content h2 {
-        font-size: 1em;
-    }
-}
-</style>
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #134e92; /* Dark blue background */
+            color: #fff; /* White text */
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%; /* Slightly reduced padding for small screens */
+            }
+
+            .home {
+                padding: 100px 5% 20px; /* Adjusted padding for mobile */
+                flex-direction: column; /* Stack image and content vertically */
+            }
+
+            .home-image img {
+                width: 100%; /* Full width on mobile */
+                margin-bottom: 20px;
+            }
+
+            .home-content {
+                padding-left: 0; /* Remove left padding on mobile */
+            }
+
+            .home-content h1 {
+                font-size: 1.5em; /* Smaller heading */
+            }
+
+            .home-content h3 {
+                font-size: 1.2em; /* Smaller subheading */
+            }
+
+            .home-content p {
+                font-size: 0.9em; /* Smaller paragraph text */
+            }
+
+            .home-content h2 {
+                font-size: 1.3em; /* Smaller contact heading */
+            }
+
+            .navbar a {
+                font-size: 0.9em; /* Smaller nav links */
+                margin-left: 20px; /* Less space between nav links */
+            }
+
+            .logo {
+                font-size: 1.2em; /* Smaller logo text */
+            }
+
+            .footer p {
+                font-size: 0.9em; /* Smaller footer text */
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="header">
-    <a href="#" class="logo">V. Orfanos</a>
-    <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="About.html">About</a>
-        <a href="Services.html">Services</a>
-        <a href="Projects.html">Projects</a>
-        <a href="Reviews.html">Reviews</a>
-    </nav>
-</header>
+    <header class="header">
+        <a href="#" class="logo">V. Orfanos</a>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="About.html">About</a>
+            <a href="Services.html">Services</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Reviews.html">Reviews</a>
+        </nav>
+    </header>
 
-<section class="home">
-    <div class="home-image">
-        <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
-    </div>
-    <div class="home-content">
-        <h1>Hi, I'm Vasilis Orfanos</h1>
-        <h3>HR Consultant | Career Coach</h3>
-        <p>Welcome! This portfolio highlights my services, projects, and client impact on over 300 professionals across Europe.</p>
-        <hr>
-        <h2>Contact me</h2>
-        <p>Telephone : +30 695 53 11 320</p>
-        <p>e-mail : orfanos_vasilis@yahoo.gr</p>
-        <div class="home-sci">
-            <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
+    <section class="home">
+        <div class="home-image">
+            <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
         </div>
-    </div>
-</section>
+        <div class="home-content">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Hi, I'm Vasilis Orfanos</h1>
+            <h3>HR Consultant | Career Coach</h3>
+            <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
+            <hr>
+            <br>
+            <h2>Contact me</h2>
+            <p>Telephone : +30 695 53 11 320</p>
+            <p>e-mail : orfanos_vasilis@yahoo.gr</p>
 
-<footer class="footer">
-    <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
-</footer>
+            <div class="home-sci">
+                <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // List of button IDs and the associated alert messages
+            const buttonsInfo = [
+                { id: 'indexButton', message: 'You clicked the Index button!' },
+                { id: 'aboutButton', message: 'You clicked the About button!' },
+                { id: 'servicesButton', message: 'You clicked the Services button!' },
+                { id: 'portfolioButton', message: 'You clicked the Portfolio button!' },
+                { id: 'contactButton', message: 'You clicked the Contact button!' }
+            ];
+
+            // Function to add an event listener to a button
+            function addButtonListener(buttonId, alertMessage) {
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    button.addEventListener('click', () => {
+                        alert(alertMessage);
+                    });
+                }
+            }
+
+            // Apply event listeners to each button
+            buttonsInfo.forEach(button => addButtonListener(button.id, button.message));
+        });
+    </script>
 </body>
 </html>
