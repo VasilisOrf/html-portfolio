@@ -1,17 +1,18 @@
-<!-- Updated responsive HTML/CSS with improved laptop breakpoint -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website | Vasilis Orfanos</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet" />
-    <style>
-        /* Import Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        /* Basic Reset */
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -25,14 +26,14 @@
             overflow-x: hidden;
         }
 
-        /* Header Styling */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 10%;
             background: #031540;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,19 +41,22 @@
         }
 
         .logo {
-            font-size: 25px;
-            color: #ffffff;
-            text-decoration: none;
+            font-size: 26px;
             font-weight: 700;
+            text-decoration: none;
+            color: #fff;
         }
 
-        /* Navigation */
+        .navbar {
+            display: flex;
+            gap: 30px;
+        }
+
         .navbar a {
-            font-size: 18px;
             color: #fff;
+            font-size: 17px;
             text-decoration: none;
-            margin-left: 35px;
-            transition: color 0.3s;
+            transition: .3s;
         }
 
         .navbar a:hover,
@@ -60,197 +64,111 @@
             color: #eaff00;
         }
 
-        /* Home */
+        /* HOME SECTION */
         .home {
-            padding: 140px 10% 20px;
+            padding: 160px 8% 40px;
             background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            min-height: calc(100vh - 40px);
-            gap: 40px;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
         }
 
         .home-image img {
-            width: 380px;
+            width: 360px;
             max-width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         .home-content {
-            flex: 1;
+            flex: 1 1 400px;
+            max-width: 600px;
         }
 
         .home-content h1 {
-            font-size: 40px;
+            font-size: 45px;
             margin-bottom: 10px;
         }
 
         .home-content h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 26px;
+            margin-bottom: 18px;
         }
 
         .home-content p {
             font-size: 16px;
             line-height: 1.6;
-            margin-bottom: 20px;
         }
 
         .home-content hr {
-            border: 0;
             height: 1px;
-            background: #ffffff;
-            margin: 20px 0;
+            background: #fff;
+            border: none;
+            margin: 25px 0;
         }
 
-        .home-content h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        /* Social icons */
         .home-sci a {
-            color: #ffffff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: 0.3s;
+            font-size: 28px;
+            color: #fff;
+            transition: .3s;
+            margin-right: 15px;
         }
 
         .home-sci a:hover {
             color: #00abf0;
         }
 
-        /* Footer */
+        /* FOOTER */
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             background: #134e92;
             color: #fff;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
+            margin-top: 20px;
         }
 
-        /* NEW BREAKPOINT FOR LAPTOPS (1024px–1366px) */
-        @media (max-width: 1600px) and (min-width: 1200px) {
+        /* RESPONSIVE — TABLET */
+        @media (max-width: 992px) {
             .home {
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                padding: 110px 8% 40px;
+                padding-top: 140px;
                 gap: 40px;
-            }
-            .home-image img {
-                width: 320px;
-                max-width: 100%;
+                text-align: center;
             }
             .home-content h1 { font-size: 38px; }
-            .home-content h3 { font-size: 22px; }
-            .home-content p { font-size: 16px; }
-        }
-            .home {
-                padding: 130px 6% 20px;
-                gap: 25px;
-            }
-            .home-content h1 {
-                font-size: 32px;
-            }
-            .home-content h3 {
-                font-size: 20px;
-            }
-            .navbar a {
-                font-size: 16px;
-                margin-left: 25px;
-            }
         }
 
-        /* Mobile-friendly adjustments */
+        /* RESPONSIVE — MOBILE */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 5%;
             }
+            .navbar {
+                display: none;
+            }
+            .home-content h1 { font-size: 32px; }
+            .home-content h3 { font-size: 20px; }
+            .home-content p { font-size: 14px; }
+        }
+
+        /* LARGE DESKTOP SCREENS */
+        @media (min-width: 1440px) {
             .home {
-                padding: 100px 5% 20px;
-                flex-direction: column;
-                text-align: center;
+                padding: 180px 15% 60px;
             }
             .home-image img {
-                width: 100%;
-                margin-bottom: 20px;
+                width: 420px;
             }
             .home-content h1 {
-                font-size: 1.5em;
-            }
-            .home-content h3 {
-                font-size: 1.2em;
-            }
-            .home-content p {
-                font-size: 0.9em;
-            }
-            .home-content h2 {
-                font-size: 1.3em;
-            }
-            .navbar a {
-                font-size: 0.9em;
-                margin-left: 20px;
-            }
-            .logo {
-                font-size: 1.2em;
-            }
-            .footer p {
-                font-size: 0.9em;
+                font-size: 52px;
             }
         }
-    /* UNIVERSAL FIXES */
-        /* Prevent header overlap */
-        body { padding-top: 90px; }
-
-        /* Fix layout squeezing on laptops */
-        @media (max-width: 1366px) and (min-width: 900px) {
-            .home {
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 120px 6% 40px;
-                gap: 50px;
-            }
-            .home-image img {
-                width: 300px;
-            }
-            .home-content h1 { font-size: 34px; }
-            .home-content h3 { font-size: 20px; }
-            .home-content p { font-size: 15px; }
-            .navbar a {
-                font-size: 16px;
-                margin-left: 20px;
-            }
-        }
-
-        /* Fix medium screens (tablets in landscape / small laptops) */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .home {
-                flex-direction: column;
-                text-align: center;
-                padding: 120px 8% 40px;
-            }
-            .home-image img {
-                width: 60%;
-                max-width: 350px;
-            }
-            .navbar a { font-size: 14px; }
-        }
-
-        /* Improved mobile */
-        @media (max-width: 768px) {
-            body { padding-top: 70px; }
-            .header { padding: 12px 5%; }
-            .home { padding: 90px 6% 20px; }
-        }
-
     </style>
 </head>
 <body>
+
     <header class="header">
         <a href="#" class="logo">V. Orfanos</a>
         <nav class="navbar">
@@ -264,16 +182,20 @@
 
     <section class="home">
         <div class="home-image">
-            <img src="images/Profil.jpeg" alt="Vasilis Orfanos" />
+            <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
         </div>
+
         <div class="home-content">
             <h1>Hi, I'm Vasilis Orfanos</h1>
             <h3>HR Consultant | Career Coach</h3>
             <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
-            <hr />
+
+            <hr>
+
             <h2>Contact me</h2>
             <p>Telephone : +30 695 53 11 320</p>
             <p>e-mail : orfanos_vasilis@yahoo.gr</p>
+
             <div class="home-sci">
                 <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
             </div>
