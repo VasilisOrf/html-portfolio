@@ -10,9 +10,21 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: #f4f4f4; color: #ffffff; overflow-x: hidden; }
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
+        body {
+            background: #f4f4f4;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
         .header {
             position: fixed;
             top: 0;
@@ -26,19 +38,42 @@
             z-index: 1000;
         }
 
-        .logo { font-size: 25px; font-weight: 700; text-decoration: none; color: #fff; }
-        .navbar a { font-size: 18px; color: #fff; text-decoration: none; margin-left: 35px; transition: color 0.3s; }
-        .navbar a:hover, .navbar a.active { color: #eaff00; }
+        .logo {
+            font-size: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+        }
 
+        .navbar a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 35px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #eaff00;
+        }
+
+        /* Home Section */
         .home {
-            padding: 160px 10% 40px;
+            padding: 140px 10% 40px;
             background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: calc(100vh - 80px);
-            gap: 40px;
             flex-wrap: wrap;
+            gap: 40px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .home-image {
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: center;
         }
 
         .home-image img {
@@ -46,89 +81,155 @@
             height: auto;
             border-radius: 10px;
             object-fit: cover;
-            max-height: 400px; /* prevent overlapping on laptops */
-            display: block;
         }
 
         .home-content {
-            flex: 1 1 400px;
-            max-width: 600px;
+            flex: 1 1 300px;
             padding-left: 20px;
+            min-width: 280px;
         }
 
-        .home-content h1 { font-size: 40px; margin-bottom: 10px; }
-        .home-content h3 { font-size: 24px; margin-bottom: 15px; }
-        .home-content p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
-        .home-content hr { height: 1px; background: #fff; border: none; margin: 20px 0; }
-        .home-content h2 { font-size: 28px; margin-bottom: 10px; }
+        .home-content h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
-        .home-sci a { font-size: 24px; color: #fff; text-decoration: none; transition: color 0.3s; margin-right: 15px; }
-        .home-sci a:hover { color: #00abf0; }
+        .home-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
 
-        .footer { text-align: center; padding: 20px; background-color: #134e92; color: #fff; width: 100%; margin-top: 40px; }
+        .home-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
 
-        /* Mobile adjustments */
+        .home-content hr {
+            border: 0;
+            height: 1px;
+            background: #ffffff;
+            margin: 20px 0;
+        }
+
+        .home-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .home-sci a {
+            color: #ffffff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .home-sci a:hover {
+            color: #00abf0;
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #134e92;
+            color: #fff;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .home {
+                padding: 120px 5% 20px;
+            }
+
+            .home-content h1 {
+                font-size: 32px;
+            }
+
+            .home-content h3 {
+                font-size: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .header { padding: 15px 5%; }
-            .home { padding: 120px 5% 20px; flex-direction: column; }
-            .home-image img { max-width: 100%; margin-bottom: 20px; max-height: none; }
-            .home-content { padding-left: 0; }
-            .home-content h1 { font-size: 28px; }
-            .home-content h3 { font-size: 20px; }
-            .home-content p { font-size: 14px; }
-            .navbar a { font-size: 0.9em; margin-left: 20px; }
-            .logo { font-size: 1.2em; }
-            .footer p { font-size: 0.9em; }
-        }
+            .home {
+                flex-direction: column;
+                padding: 100px 5% 20px;
+                min-height: auto;
+            }
 
-        /* Laptop adjustments */
-        @media (min-width: 769px) and (max-width: 1440px) {
-            .home { flex-wrap: nowrap; align-items: center; gap: 40px; }
-            .home-image img { max-height: 400px; }
-            .home-content h3 { font-size: 22px; }
-        }
+            .home-content {
+                padding-left: 0;
+            }
 
-        /* Large desktops */
-        @media (min-width: 1441px) {
-            .home-image img { max-height: 500px; }
-            .home-content h1 { font-size: 48px; }
+            .home-content h1 {
+                font-size: 1.5em;
+            }
+
+            .home-content h3 {
+                font-size: 1.2em;
+            }
+
+            .home-content p {
+                font-size: 0.9em;
+            }
+
+            .home-content h2 {
+                font-size: 1.3em;
+            }
+
+            .navbar a {
+                font-size: 0.9em;
+                margin-left: 20px;
+            }
+
+            .logo {
+                font-size: 1.2em;
+            }
+
+            .footer p {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <a href="#" class="logo">V. Orfanos</a>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="About.html">About</a>
+            <a href="Services.html">Services</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Reviews.html">Reviews</a>
+        </nav>
+    </header>
 
-<header class="header">
-    <a href="#" class="logo">V. Orfanos</a>
-    <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="About.html">About</a>
-        <a href="Services.html">Services</a>
-        <a href="Projects.html">Projects</a>
-        <a href="Reviews.html">Reviews</a>
-    </nav>
-</header>
-
-<section class="home">
-    <div class="home-image">
-        <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
-    </div>
-    <div class="home-content">
-        <h1>Hi, I'm Vasilis Orfanos</h1>
-        <h3>HR Consultant | Career Coach</h3>
-        <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
-        <hr>
-        <h2>Contact me</h2>
-        <p>Telephone : +30 695 53 11 320</p>
-        <p>e-mail : orfanos_vasilis@yahoo.gr</p>
-        <div class="home-sci">
-            <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
+    <section class="home">
+        <div class="home-image">
+            <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
         </div>
-    </div>
-</section>
+        <div class="home-content">
+            <h1>Hi, I'm Vasilis Orfanos</h1>
+            <h3>HR Consultant | Career Coach</h3>
+            <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
+            <hr>
+            <h2>Contact me</h2>
+            <p>Telephone : +30 695 53 11 320</p>
+            <p>e-mail : orfanos_vasilis@yahoo.gr</p>
 
-<footer class="footer">
-    <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
-</footer>
+            <div class="home-sci">
+                <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </section>
 
+    <footer class="footer">
+        <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
+    </footer>
 </body>
 </html>
