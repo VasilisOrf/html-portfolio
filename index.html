@@ -190,6 +190,52 @@
                 font-size: 0.9em;
             }
         }
+    /* UNIVERSAL FIXES */
+        /* Prevent header overlap */
+        body { padding-top: 90px; }
+
+        /* Fix layout squeezing on laptops */
+        @media (max-width: 1366px) and (min-width: 900px) {
+            .home {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 120px 6% 40px;
+                gap: 50px;
+            }
+            .home-image img {
+                width: 300px;
+            }
+            .home-content h1 { font-size: 34px; }
+            .home-content h3 { font-size: 20px; }
+            .home-content p { font-size: 15px; }
+            .navbar a {
+                font-size: 16px;
+                margin-left: 20px;
+            }
+        }
+
+        /* Fix medium screens (tablets in landscape / small laptops) */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .home {
+                flex-direction: column;
+                text-align: center;
+                padding: 120px 8% 40px;
+            }
+            .home-image img {
+                width: 60%;
+                max-width: 350px;
+            }
+            .navbar a { font-size: 14px; }
+        }
+
+        /* Improved mobile */
+        @media (max-width: 768px) {
+            body { padding-top: 70px; }
+            .header { padding: 12px 5%; }
+            .home { padding: 90px 6% 20px; }
+        }
+
     </style>
 </head>
 <body>
