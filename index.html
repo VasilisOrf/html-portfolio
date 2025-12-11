@@ -59,7 +59,7 @@ body {
 
 /* Home Section */
 .home {
-    padding: 140px 10% 20px;
+    padding: 140px 10% 60px; /* πιο αέρας κάτω αφού δεν υπάρχει footer */
     background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
     display: flex;
     align-items: flex-start;
@@ -75,8 +75,8 @@ body {
 }
 
 .home-image img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 350px;
+    max-height: 350px;
     height: auto;
     width: auto;
     border-radius: 50%;
@@ -131,18 +131,9 @@ body {
     color: #00abf0;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #134e92;
-    color: #fff;
-    position: relative;
-}
-
 /* Mobile adjustments */
 @media (max-width: 1024px) {
-    .home-image img { max-width: 200px; max-height: 200px; }
+    .home-image img { max-width: 250px; max-height: 250px; }
     .home-content h1 { font-size: 30px; }
     .home-content h3 { font-size: 18px; }
     .home-content p { font-size: 14px; }
@@ -151,27 +142,30 @@ body {
 
 @media (max-width: 768px) {
     .header { padding: 15px 5%; }
+
     .home {
         flex-direction: column;
-        align-items: center; /* κεντράρει εικόνα και κείμενο */
+        align-items: center;
         padding-top: 80px;
-        min-height: calc(100vh - 80px);
     }
+
     .home-image, .home-content {
         flex: 1 1 100%;
         text-align: center;
         display: flex;
         flex-direction: column;
-        align-items: center; /* κεντράρει εικόνα και κείμενο */
+        align-items: center;
     }
+
     .home-image img { max-width: 150px; max-height: 150px; margin-bottom: 20px; }
+
     .home-content h1 { font-size: 1.5em; }
     .home-content h3 { font-size: 1.2em; }
     .home-content p { font-size: 0.9em; }
     .home-content h2 { font-size: 1.3em; }
+
     .navbar a { font-size: 0.9em; margin-left: 20px; }
     .logo { font-size: 1.2em; }
-    .footer p { font-size: 0.9em; }
 }
 </style>
 </head>
@@ -206,10 +200,6 @@ body {
         </div>
     </div>
 </section>
-
-<footer class="footer">
-    <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
-</footer>
 
 </body>
 </html>
