@@ -1,186 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website | Vasilis Orfanos</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
-    <style>
-        /* Import Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Website | Vasilis Orfanos</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+/* Βασικό Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        body {
-            background: #f4f4f4;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+body {
+    background: #f4f4f4;
+    color: #fff;
+    overflow: hidden; /* Αποτρέπει scroll */
+}
 
-        /* Header Styling */
-        .header {
-            width: 100%;
-            padding: 20px 10%;
-            background: #031540;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #031540;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 1000;
+}
 
-        .logo {
-            font-size: 25px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 700;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
 
-        .navbar a {
-            font-size: 18px;
-            color: #fff;
-            text-decoration: none;
-            margin-left: 35px;
-            transition: color 0.3s;
-        }
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
 
-        .navbar a:hover,
-        .navbar a.active {
-            color: #eaff00;
-        }
+.navbar a:hover,
+.navbar a.active {
+    color: #eaff00;
+}
 
-        /* Home Section Styling */
-        .home {
-            flex: 1; /* Παίρνει όλο το διαθέσιμο ύψος */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 160px 10% 100px; /* Άφθονο padding πάνω και κάτω */
-            background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
-        }
+/* Home Section */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - 60px - 50px); /* Αφαιρούμε header + footer */
+    padding: 10px 5%; 
+    background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
+    text-align: center;
+}
 
-        .home-image,
-        .home-content {
-            flex: 1 1 400px; /* Responsive basis */
-            max-width: 600px;
-            margin: 10px;
-        }
+/* Μικρή εικόνα ώστε να χωράει όλο το περιεχόμενο */
+.home-image img {
+    width: auto;
+    max-width: 40%;   /* όχι πολύ πλατιά */
+    max-height: 20vh; /* μικρό ύψος για να χωράει χωρίς scroll */
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 
-        .home-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+.home-content h1 {
+    font-size: 1.8em;
+    margin: 5px 0;
+}
 
-        .home-content h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
+.home-content h3 {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
 
-        .home-content h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
+.home-content p {
+    font-size: 0.95em;
+    line-height: 1.4;
+    margin: 5px 0;
+}
 
-        .home-content p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.home-content hr {
+    width: 50%;
+    margin: 10px auto;
+    border: 0;
+    height: 1px;
+    background: #fff;
+}
 
-        .home-content hr {
-            border: 0;
-            height: 1px;
-            background: #ffffff;
-            margin: 20px 0;
-        }
+.home-content h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
 
-        .home-content h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+.home-sci a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 5px;
+    transition: 0.3s;
+}
 
-        .home-sci a {
-            color: #ffffff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.home-sci a:hover {
+    color: #00abf0;
+}
 
-        .home-sci a:hover {
-            color: #00abf0;
-        }
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #134e92;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.9em;
+}
 
-        /* Footer Styling */
-        .footer {
-            text-align: center;
-            padding: 20px 10%;
-            background-color: #134e92;
-            color: #fff;
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .home {
-                padding: 120px 5% 60px;
-                flex-direction: column;
-            }
-
-            .home-content h1 { font-size: 2em; }
-            .home-content h3 { font-size: 1.2em; }
-            .home-content p { font-size: 0.95em; }
-            .home-content h2 { font-size: 1.3em; }
-
-            .navbar a {
-                font-size: 0.9em;
-                margin-left: 20px;
-            }
-
-            .logo { font-size: 1.2em; }
-        }
-    </style>
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 5%;
+    }
+    .logo {
+        font-size: 1.2em;
+    }
+    .navbar a {
+        font-size: 0.9em;
+        margin-left: 15px;
+    }
+    .home-image img {
+        max-width: 60%;
+        max-height: 15vh; /* ακόμα μικρότερη εικόνα για κινητά */
+    }
+    .home-content h1 {
+        font-size: 1.4em;
+    }
+    .home-content h3 {
+        font-size: 1em;
+    }
+    .home-content p {
+        font-size: 0.85em;
+    }
+    .home-content h2 {
+        font-size: 1em;
+    }
+}
+</style>
 </head>
 <body>
-    <header class="header">
-        <a href="#" class="logo">V. Orfanos</a>
-        <nav class="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="About.html">About</a>
-            <a href="Services.html">Services</a>
-            <a href="Projects.html">Projects</a>
-            <a href="Reviews.html">Reviews</a>
-        </nav>
-    </header>
+<header class="header">
+    <a href="#" class="logo">V. Orfanos</a>
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="About.html">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Reviews.html">Reviews</a>
+    </nav>
+</header>
 
-    <section class="home">
-        <div class="home-image">
-            <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
+<section class="home">
+    <div class="home-image">
+        <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
+    </div>
+    <div class="home-content">
+        <h1>Hi, I'm Vasilis Orfanos</h1>
+        <h3>HR Consultant | Career Coach</h3>
+        <p>Welcome! This portfolio highlights my services, projects, and client impact on over 300 professionals across Europe.</p>
+        <hr>
+        <h2>Contact me</h2>
+        <p>Telephone : +30 695 53 11 320</p>
+        <p>e-mail : orfanos_vasilis@yahoo.gr</p>
+        <div class="home-sci">
+            <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
         </div>
-        <div class="home-content">
-            <h1>Hi, I'm Vasilis Orfanos</h1>
-            <h3>HR Consultant | Career Coach</h3>
-            <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
-            <hr>
-            <h2>Contact me</h2>
-            <p>Telephone : +30 695 53 11 320</p>
-            <p>e-mail : orfanos_vasilis@yahoo.gr</p>
+    </div>
+</section>
 
-            <div class="home-sci">
-                <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
-    </footer>
+<footer class="footer">
+    <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
+</footer>
 </body>
 </html>
