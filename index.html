@@ -60,12 +60,11 @@ body {
 /* Home Section - Above-the-Fold */
 .home {
     padding-top: 100px;
-    padding-bottom: 40px;
     background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    min-height: calc(100vh - 80px); /* Header + footer */
+    min-height: calc(100vh - 80px); /* header+footer */
     flex-wrap: wrap;
 }
 
@@ -73,6 +72,7 @@ body {
     flex: 0 0 40%;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .home-image img {
@@ -89,7 +89,7 @@ body {
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* πάντα στο κέντρο */
+    justify-content: center;
 }
 
 .home-content h1 { font-size: 36px; margin-bottom: 10px; }
@@ -98,14 +98,28 @@ body {
 .home-content hr { border: 0; height: 1px; background: #ffffff; margin: 15px 0; }
 .home-content h2 { font-size: 24px; margin-bottom: 10px; }
 
-.home-sci a {
-    color: #ffffff;
+/* Contact Inline */
+.contact-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.contact-inline p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-inline a {
     font-size: 24px;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.home-sci a:hover {
+.contact-inline a:hover {
     color: #00abf0;
 }
 
@@ -120,11 +134,7 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .home-image img {
-        width: 200px;
-        height: 200px;
-    }
-
+    .home-image img { width: 200px; height: 200px; }
     .home-content h1 { font-size: 30px; }
     .home-content h3 { font-size: 18px; }
     .home-content p { font-size: 14px; }
@@ -144,15 +154,14 @@ body {
         text-align: center;
     }
 
-    .home-image img {
-        width: 150px;
-        height: 150px;
-    }
+    .home-image img { width: 150px; height: 150px; }
 
     .home-content h1 { font-size: 1.5em; }
     .home-content h3 { font-size: 1.2em; }
     .home-content p { font-size: 0.9em; }
     .home-content h2 { font-size: 1.3em; }
+
+    .contact-inline { justify-content: center; gap: 10px; }
 
     .navbar a { font-size: 0.9em; margin-left: 20px; }
     .logo { font-size: 1.2em; }
@@ -183,10 +192,9 @@ body {
         <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
         <hr>
         <h2>Contact me</h2>
-        <p>Telephone : +30 695 53 11 320</p>
-        <p>e-mail : orfanos_vasilis@yahoo.gr</p>
-
-        <div class="home-sci">
+        <div class="contact-inline">
+            <p>Telephone: +30 695 53 11 320</p>
+            <p>Email: orfanos_vasilis@yahoo.gr</p>
             <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
         </div>
     </div>
