@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
     <style>
-        /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* Header Styling */
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -37,6 +35,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            transition: padding 0.3s;
         }
 
         .logo {
@@ -61,40 +60,38 @@
 
         /* Home Section */
         .home {
-            padding: 140px 10% 20px;
+            padding: 140px 10% 80px;               /* Reduced bottom padding */
             background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
             display: flex;
             align-items: center;
-            min-height: calc(100vh - 40px);
+            min-height: 100vh;
+            gap: 40px;                              /* Adds breathing room between image & text */
         }
 
         .home-image img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .home-content {
             flex: 1;
-            padding-left: 20px;
         }
 
         .home-content h1 {
             font-size: 40px;
-            color: #ffffff;
             margin-bottom: 10px;
         }
 
         .home-content h3 {
             font-size: 24px;
-            color: #ffffff;
             margin-bottom: 15px;
         }
 
         .home-content p {
             font-size: 16px;
             line-height: 1.6;
-            color: #ffffff;
             margin-bottom: 20px;
         }
 
@@ -107,14 +104,13 @@
 
         .home-content h2 {
             font-size: 28px;
-            color: #ffffff;
             margin-bottom: 10px;
         }
 
         .home-sci a {
             color: #ffffff;
-            font-size: 24px;
-            text-decoration: none;
+            font-size: 28px;
+            margin-right: 15px;
             transition: color 0.3s;
         }
 
@@ -128,163 +124,24 @@
             padding: 20px;
             background-color: #134e92;
             color: #fff;
-            position: fixed;
-            left: 0;
-            bottom: 0;
             width: 100%;
         }
 
-        /* --------------------------------------------- */
-        /* NEW FIX: Small Laptop Screens (1024–1366px)   */
-        /* --------------------------------------------- */
+        /* =========================================
+           RESPONSIVE FIXES (this is the key part)
+           ========================================= */
+
         @media (max-width: 1200px) {
-            .home {
-                padding: 120px 8% 20px;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .home-image img {
-                width: 70%;
-                margin: 0 auto 25px;
-                display: block;
-            }
-
-            .home-content {
-                padding-left: 0;
-            }
-
-            .home-content h1 {
-                font-size: 32px;
-            }
-
-            .home-content h3 {
-                font-size: 20px;
-            }
-
-            .navbar a {
-                margin-left: 25px;
-                font-size: 16px;
-            }
-        }
-
-        /* --------------------------------------------- */
-        /* Existing Mobile Styles (you already had)      */
-        /* --------------------------------------------- */
-        @media (max-width: 768px) {
             .header {
-                padding: 15px 5%;
+                padding: 20px 6%;
             }
-
             .home {
-                padding: 100px 5% 20px;
-                flex-direction: column;
-            }
-
-            .home-image img {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .home-content {
-                padding-left: 0;
-            }
-
-            .home-content h1 {
-                font-size: 1.5em;
-            }
-
-            .home-content h3 {
-                font-size: 1.2em;
-            }
-
-            .home-content p {
-                font-size: 0.9em;
-            }
-
-            .home-content h2 {
-                font-size: 1.3em;
-            }
-
-            .navbar a {
-                font-size: 0.9em;
-                margin-left: 20px;
-            }
-
-            .logo {
-                font-size: 1.2em;
-            }
-
-            .footer p {
-                font-size: 0.9em;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<header class="header">
-    <a href="#" class="logo">V. Orfanos</a>
-    <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="About.html">About</a>
-        <a href="Services.html">Services</a>
-        <a href="Projects.html">Projects</a>
-        <a href="Reviews.html">Reviews</a>
-    </nav>
-</header>
-
-<section class="home">
-    <div class="home-image">
-        <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
-    </div>
-
-    <div class="home-content">
-        <br><br><br><br>
-        <h1>Hi, I'm Vasilis Orfanos</h1>
-        <h3>HR Consultant | Career Coach</h3>
-        <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
-
-        <hr><br>
-
-        <h2>Contact me</h2>
-        <p>Telephone : +30 695 53 11 320</p>
-        <p>e-mail : orfanos_vasilis@yahoo.gr</p>
-
-        <div class="home-sci">
-            <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
-        </div>
-
-        <br><br><br><br>
-    </div>
-</section>
-
-<footer class="footer">
-    <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
-</footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const buttonsInfo = [
-            { id: 'indexButton', message: 'You clicked the Index button!' },
-            { id: 'aboutButton', message: 'You clicked the About button!' },
-            { id: 'servicesButton', message: 'You clicked the Services button!' },
-            { id: 'portfolioButton', message: 'You clicked the Portfolio button!' },
-            { id: 'contactButton', message: 'You clicked the Contact button!' }
-        ];
-
-        function addButtonListener(buttonId, alertMessage) {
-            const button = document.getElementById(buttonId);
-            if (button) {
-                button.addEventListener('click', () => {
-                    alert(alertMessage);
-                });
+                padding: 140px 6% 80px;
             }
         }
 
-        buttonsInfo.forEach(button => addButtonListener(button.id, button.message));
-    });
-</script>
-
-</body>
-</html>
+        /* Critical fix: Small laptops & large tablets (900px – 1024px) */
+        @media (max-width: 1024px) {
+            .home {
+                flex-direction: column;          /* Stack image on top of text */
+               
