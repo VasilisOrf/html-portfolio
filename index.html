@@ -20,9 +20,9 @@
         }
 
         body {
-            background: #f4f4f4; /* Light gray background */
-            color: #ffffff; /* White text for high contrast */
-            overflow-x: hidden; /* Prevents horizontal scrolling */
+            background: #f4f4f4;
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
         /* Header Styling */
@@ -32,24 +32,23 @@
             left: 0;
             width: 100%;
             padding: 20px 10%;
-            background: #031540; /* Dark blue header background */
+            background: #031540;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000; /* Ensures header stays on top */
+            z-index: 1000;
         }
 
         .logo {
             font-size: 25px;
-            color: #ffffff; /* White for the logo text */
+            color: #ffffff;
             text-decoration: none;
             font-weight: 700;
         }
 
-        /* Navigation Link Styling */
         .navbar a {
             font-size: 18px;
-            color: #fff; /* White text for navigation links */
+            color: #fff;
             text-decoration: none;
             margin-left: 35px;
             transition: color 0.3s;
@@ -57,59 +56,73 @@
 
         .navbar a:hover,
         .navbar a.active {
-            color: #eaff00; /* Yellow for hover and active states */
+            color: #eaff00;
         }
 
         /* Home Section Styling */
         .home {
-            padding: 140px 10% 20px; /* Increased top padding to account for header */
+            padding: 140px 10% 60px;
             background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            min-height: calc(100vh - 40px); /* Adjust height based on header/footer */
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            gap: 30px;
         }
 
         .home-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #eaff00;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
 
         .home-content {
-            flex: 1;
-            padding-left: 20px;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .home-content h1 {
             font-size: 40px;
-            color: #ffffff; /* White text for headings */
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
         .home-content h3 {
             font-size: 24px;
-            color: #ffffff; /* White text */
+            color: #ffffff;
             margin-bottom: 15px;
         }
 
         .home-content p {
             font-size: 16px;
             line-height: 1.6;
-            color: #ffffff; /* White text for readable contrast */
+            color: #ffffff;
             margin-bottom: 20px;
         }
 
         .home-content hr {
             border: 0;
             height: 1px;
+            width: 100%;
             background: #ffffff;
-            margin: 20px 0;
+            margin: 10px 0 20px;
         }
 
         .home-content h2 {
             font-size: 28px;
             color: #ffffff;
             margin-bottom: 10px;
+        }
+
+        .home-sci {
+            margin-top: 10px;
         }
 
         .home-sci a {
@@ -120,68 +133,106 @@
         }
 
         .home-sci a:hover {
-            color: #00abf0; /* Light blue for hover */
+            color: #00abf0;
         }
 
         /* Footer Styling */
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #134e92; /* Dark blue background */
-            color: #fff; /* White text */
-            position: fixed;
-            left: 0;
-            bottom: 0;
+            background-color: #134e92;
+            color: #fff;
             width: 100%;
+        }
+
+        /* Large screens */
+        @media (min-width: 1200px) {
+            .home-image img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .home-content h1 {
+                font-size: 46px;
+            }
+        }
+
+        /* Tablets / small laptops */
+        @media (max-width: 1024px) {
+            .home {
+                padding: 130px 8% 50px;
+                gap: 24px;
+            }
+
+            .home-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .home-content h1 {
+                font-size: 34px;
+            }
+
+            .home-content h3 {
+                font-size: 20px;
+            }
         }
 
         /* Mobile-friendly adjustments */
         @media (max-width: 768px) {
             .header {
-                padding: 15px 5%; /* Slightly reduced padding for small screens */
+                padding: 15px 5%;
             }
 
             .home {
-                padding: 100px 5% 20px; /* Adjusted padding for mobile */
-                flex-direction: column; /* Stack image and content vertically */
+                padding: 110px 6% 40px;
+                gap: 18px;
             }
 
             .home-image img {
-                width: 100%; /* Full width on mobile */
-                margin-bottom: 20px;
-            }
-
-            .home-content {
-                padding-left: 0; /* Remove left padding on mobile */
+                width: 160px;
+                height: 160px;
+                border-width: 3px;
             }
 
             .home-content h1 {
-                font-size: 1.5em; /* Smaller heading */
+                font-size: 1.5em;
             }
 
             .home-content h3 {
-                font-size: 1.2em; /* Smaller subheading */
+                font-size: 1.2em;
             }
 
             .home-content p {
-                font-size: 0.9em; /* Smaller paragraph text */
+                font-size: 0.9em;
             }
 
             .home-content h2 {
-                font-size: 1.3em; /* Smaller contact heading */
+                font-size: 1.3em;
             }
 
             .navbar a {
-                font-size: 0.9em; /* Smaller nav links */
-                margin-left: 20px; /* Less space between nav links */
+                font-size: 0.9em;
+                margin-left: 20px;
             }
 
             .logo {
-                font-size: 1.2em; /* Smaller logo text */
+                font-size: 1.2em;
             }
 
             .footer p {
-                font-size: 0.9em; /* Smaller footer text */
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-image img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .home-content h1 {
+                font-size: 1.3em;
             }
         }
     </style>
@@ -203,15 +254,10 @@
             <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
         </div>
         <div class="home-content">
-            <br>
-            <br>
-            <br>
-            <br>
             <h1>Hi, I'm Vasilis Orfanos</h1>
             <h3>HR Consultant | Career Coach</h3>
             <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
             <hr>
-            <br>
             <h2>Contact me</h2>
             <p>Telephone : +30 695 53 11 320</p>
             <p>e-mail : orfanos_vasilis@yahoo.gr</p>
@@ -219,10 +265,6 @@
             <div class="home-sci">
                 <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
         </div>
     </section>
     <footer class="footer">
@@ -230,7 +272,6 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // List of button IDs and the associated alert messages
             const buttonsInfo = [
                 { id: 'indexButton', message: 'You clicked the Index button!' },
                 { id: 'aboutButton', message: 'You clicked the About button!' },
@@ -239,7 +280,6 @@
                 { id: 'contactButton', message: 'You clicked the Contact button!' }
             ];
 
-            // Function to add an event listener to a button
             function addButtonListener(buttonId, alertMessage) {
                 const button = document.getElementById(buttonId);
                 if (button) {
@@ -249,7 +289,6 @@
                 }
             }
 
-            // Apply event listeners to each button
             buttonsInfo.forEach(button => addButtonListener(button.id, button.message));
         });
     </script>
