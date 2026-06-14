@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website | Vasilis Orfanos</title>
+
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css" rel="stylesheet">
+
     <style>
-        /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -21,11 +21,11 @@
 
         body {
             background: #f4f4f4;
-            color: #ffffff;
+            color: #111;
             overflow-x: hidden;
         }
 
-        /* Header Styling */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
@@ -41,7 +41,7 @@
 
         .logo {
             font-size: 25px;
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
             font-weight: 700;
         }
@@ -51,7 +51,7 @@
             color: #fff;
             text-decoration: none;
             margin-left: 35px;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
         .navbar a:hover,
@@ -59,268 +59,163 @@
             color: #eaff00;
         }
 
-        /* Home Section Styling */
+        /* HOME SECTION FIX */
         .home {
-            padding: 140px 10% 60px;
+            padding: 120px 10% 80px;
             background: linear-gradient(-90deg, #031540 10%, #0a54c4 90%);
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            justify-content: space-between;
+            gap: 40px;
             min-height: 100vh;
-            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .home-image {
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            background: #ffffff;
-            border: 4px solid #eaff00;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            flex: 1;
             display: flex;
-            align-items: center;
             justify-content: center;
-            overflow: hidden;
+            align-items: center;
         }
 
         .home-image img {
-            display: block;
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            border-radius: 10px;
         }
 
         .home-content {
-            max-width: 700px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex: 1;
+        }
+
+        .home-content h1,
+        .home-content h2,
+        .home-content h3,
+        .home-content p {
+            color: #fff;
         }
 
         .home-content h1 {
             font-size: 40px;
-            color: #ffffff;
             margin-bottom: 10px;
         }
 
         .home-content h3 {
             font-size: 24px;
-            color: #ffffff;
             margin-bottom: 15px;
         }
 
         .home-content p {
             font-size: 16px;
             line-height: 1.6;
-            color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .home-content hr {
             border: 0;
             height: 1px;
-            width: 100%;
-            background: #ffffff;
-            margin: 10px 0 20px;
-        }
-
-        .home-content h2 {
-            font-size: 28px;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .home-sci {
-            margin-top: 10px;
+            background: #fff;
+            margin: 20px 0;
         }
 
         .home-sci a {
-            color: #ffffff;
+            color: #fff;
             font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
         }
 
         .home-sci a:hover {
             color: #00abf0;
         }
 
-        /* Footer Styling */
+        /* FOOTER */
         .footer {
             text-align: center;
             padding: 20px;
             background-color: #134e92;
             color: #fff;
+            position: fixed;
+            left: 0;
+            bottom: 0;
             width: 100%;
         }
 
-        /* Large screens: keep the image generous but not oversized */
-        @media (min-width: 1200px) {
-            .home-image {
-                width: 260px;
-                height: 260px;
-            }
-
-            .home-content {
-                max-width: 900px;
-            }
-
-            .home-content h1 {
-                font-size: 46px;
-            }
-
-            .home-content p {
-                font-size: 18px;
-            }
-        }
-
-        /* Tablets / small laptops */
-        @media (max-width: 1024px) {
-            .home {
-                padding: 130px 8% 50px;
-                gap: 24px;
-            }
-
-            .home-image {
-                width: 200px;
-                height: 200px;
-            }
-
-            .home-content h1 {
-                font-size: 34px;
-            }
-
-            .home-content h3 {
-                font-size: 20px;
-            }
-        }
-
-        /* Mobile-friendly adjustments */
+        /* MOBILE FIX */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 5%;
             }
 
             .home {
-                padding: 110px 6% 40px;
-                gap: 18px;
+                flex-direction: column;
+                text-align: center;
+                padding: 100px 5% 80px;
             }
 
-            .home-image {
-                width: 160px;
-                height: 160px;
-                border-width: 3px;
-            }
-
-            .home-content h1 {
-                font-size: 1.5em;
-            }
-
-            .home-content h3 {
-                font-size: 1.2em;
-            }
-
-            .home-content p {
-                font-size: 0.9em;
-            }
-
-            .home-content h2 {
-                font-size: 1.3em;
+            .home-image img {
+                max-width: 80%;
             }
 
             .navbar a {
                 font-size: 0.9em;
-                margin-left: 20px;
+                margin-left: 15px;
             }
 
             .logo {
                 font-size: 1.2em;
             }
-
-            .footer p {
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .home-image {
-                width: 130px;
-                height: 130px;
-            }
-
-            .home-content h1 {
-                font-size: 1.3em;
-            }
-        }
-
-        /* Override any conflicting rules from style.css */
-        .home, .home-image, .home-content {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            right: auto !important;
-            bottom: auto !important;
-            float: none !important;
-            transform: none !important;
         }
     </style>
 </head>
+
 <body>
-    <header class="header">
-        <a href="#" class="logo">V. Orfanos</a>
-        <nav class="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="About.html">About</a>
-            <a href="Services.html">Services</a>
-            <a href="Projects.html">Projects</a>
-            <a href="Reviews.html">Reviews</a>
-        </nav>
-    </header>
 
-    <section class="home">
-        <div class="home-image">
-            <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
+<header class="header">
+    <a href="#" class="logo">V. Orfanos</a>
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="About.html">About</a>
+        <a href="Services.html">Services</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Reviews.html">Reviews</a>
+    </nav>
+</header>
+
+<section class="home">
+
+    <div class="home-image">
+        <img src="images/Profil.jpeg" alt="Vasilis Orfanos">
+    </div>
+
+    <div class="home-content">
+        <h1>Hi, I'm Vasilis Orfanos</h1>
+        <h3>HR Consultant | Career Coach</h3>
+
+        <p>
+            Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services,
+            projects, and client reviews, highlighting my expertise and the career impact I’ve made on
+            over 300 professionals across Europe.
+        </p>
+
+        <hr>
+
+        <h2>Contact me</h2>
+        <p>Telephone: +30 695 53 11 320</p>
+        <p>e-mail: orfanos_vasilis@yahoo.gr</p>
+
+        <div class="home-sci">
+            <a href="https://www.linkedin.com/in/vasilis-orfanos/">
+                <i class='bx bxl-linkedin'></i>
+            </a>
         </div>
-        <div class="home-content">
-            <h1>Hi, I'm Vasilis Orfanos</h1>
-            <h3>HR Consultant | Career Coach</h3>
-            <p>Welcome, I’m thrilled you’re here! This portfolio features a curated collection of services, projects, and client reviews, highlighting my expertise and the career impact I’ve made on over 300 professionals across Europe.</p>
-            <hr>
-            <h2>Contact me</h2>
-            <p>Telephone : +30 695 53 11 320</p>
-            <p>e-mail : orfanos_vasilis@yahoo.gr</p>
+    </div>
 
-            <div class="home-sci">
-                <a href="https://www.linkedin.com/in/vasilis-orfanos/"><i class='bx bxl-linkedin'></i></a>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttonsInfo = [
-                { id: 'indexButton', message: 'You clicked the Index button!' },
-                { id: 'aboutButton', message: 'You clicked the About button!' },
-                { id: 'servicesButton', message: 'You clicked the Services button!' },
-                { id: 'portfolioButton', message: 'You clicked the Portfolio button!' },
-                { id: 'contactButton', message: 'You clicked the Contact button!' }
-            ];
+</section>
 
-            function addButtonListener(buttonId, alertMessage) {
-                const button = document.getElementById(buttonId);
-                if (button) {
-                    button.addEventListener('click', () => {
-                        alert(alertMessage);
-                    });
-                }
-            }
+<footer class="footer">
+    <p>© 2025 Vasilis Orfanos. All rights reserved.</p>
+</footer>
 
-            buttonsInfo.forEach(button => addButtonListener(button.id, button.message));
-        });
-    </script>
 </body>
 </html>
